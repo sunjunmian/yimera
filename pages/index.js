@@ -67,15 +67,15 @@ export default function YiMeraHome() {
         {/* Hero Section - Corrected Layout */}
         <section className="relative h-screen min-h-[800px] flex items-center">
           <div className="container mx-auto flex h-full">
-            <div className="w-full md:w-7/12 flex flex-col justify-center pt-24">
-                <div className="md:pr-12">
+            <div className="relative z-10 w-full md:w-10/12 flex flex-col justify-center pt-24">
+                <div className="md:pr-12 bg-[#F9F6F0]/60 p-8 rounded-xl">
                     <motion.h2 
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6"
                     >
-                        Your property has potential.<br/>We have a plan.
+                        Your property has a story.<br/>We have a plan.
                     </motion.h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 40 }}
