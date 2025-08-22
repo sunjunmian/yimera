@@ -6,6 +6,8 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import Link from 'next/link'; // Import the Link component
+
 
 // Helper component for SVG icons to keep the code clean
 const CheckIcon = ({ className }) => (
@@ -109,47 +111,59 @@ export default function YiMeraHome() {
           </div>
         </section>
 
-        {/* Service Packages Section */}
-        <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
+  {/* Pricing Section */}
+        <section id="pricing" className="py-20 md:py-32">
           <div className="container mx-auto text-center px-4">
-            <AnimatedSection>
-                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">It’s a journey. We’re your guide.</h3>
-                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">Whether you're starting from scratch or know there's another gear, we have a playbook for your next move.</p>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
-              <AnimatedSection delay={0.1}>
-                <div className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                  <h4 className="font-serif text-3xl font-bold mb-3">Nail Your Launch</h4>
-                  <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that's profitable from day one.</p>
-                   <ul className="space-y-3">
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Market & Yield Analysis</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Brand & Listing Creation</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Professional Media Production</li>
-                  </ul>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <div className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47]">
-                  <h4 className="font-serif text-3xl font-bold mb-3">Boost Your Bookings</h4>
-                  <p className="text-[#DDE5DB] mb-6">For the seasoned host who's ready for more. We'll audit your operations and fine-tune your marketing to unlock true earning potential.</p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> 100-Point Listing Audit</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Dynamic Pricing Strategy</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Direct Booking & Social Growth</li>
-                  </ul>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <div className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                  <h4 className="font-serif text-3xl font-bold mb-3">Build Your Brand</h4>
-                  <p className="text-[#6E8C7D] mb-6">For the visionary ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
-                   <ul className="space-y-3">
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Multi-Unit Operational Systems</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Portfolio & Brand Expansion</li>
-                    <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Business Valuation & Exit Plan</li>
-                  </ul>
-                </div>
-              </AnimatedSection>
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+              <h2 className="font-serif text-4xl md:text-6xl font-bold mb-4">Clear pricing for ambitious hosts.</h2>
+              <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto mb-16">Our packages are designed as strategic investments in your property's success. No hidden fees, no jargon—just results.</p>
+            </motion.div>
+            
+            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto text-left">
+              {/* Package 1: Launch */}
+              <motion.div id="launch" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                <h3 className="font-serif text-3xl font-bold mb-2">The Launchpad</h3>
+                <p className="text-[#6E8C7D] mb-6">For new properties or first-time hosts.</p>
+                <p className="font-serif text-4xl font-bold mb-2">Starting at $2,500</p>
+                <p className="text-[#6E8C7D] mb-8">One-time project fee</p>
+                <ul className="space-y-4 flex-grow">
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Market Analysis & Revenue Projections</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Compliance & Permitting Guidance</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Full Listing Creation & Copywriting</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Professional Photoshoot & Video</strong></li>
+                </ul>
+                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Get Started</a>
+              </motion.div>
+
+              {/* Package 2: Boost */}
+              <motion.div id="boost" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl ring-4 ring-[#D36D47] flex flex-col">
+                <h3 className="font-serif text-3xl font-bold mb-2">The Performance Audit</h3>
+                <p className="text-[#DDE5DB] mb-6">For existing listings ready to level up.</p>
+                <p className="font-serif text-4xl font-bold mb-2">Starting at $1,800</p>
+                <p className="text-[#DDE5DB] mb-8">One-time project fee</p>
+                <ul className="space-y-4 flex-grow">
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>100-Point Audit of Listing & Operations</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Dynamic Pricing & SEO Overhaul</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Guest Experience Enhancement Plan</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Direct Booking & Social Media Strategy</strong></li>
+                </ul>
+                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Boost My Bookings</a>
+              </motion.div>
+
+              {/* Package 3: Brand */}
+              <motion.div id="brand" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                <h3 className="font-serif text-3xl font-bold mb-2">The Portfolio Strategy</h3>
+                <p className="text-[#6E8C7D] mb-6">For hosts scaling to a multi-property brand.</p>
+                <p className="font-serif text-4xl font-bold mb-2">Custom Retainer</p>
+                <p className="text-[#6E8C7D] mb-8">Bespoke monthly advising</p>
+                <ul className="space-y-4 flex-grow">
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Multi-Property System Development</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Hospitality Brand Building</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Team Building & SOP Creation</strong></li>
+                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Valuation & Exit/Acquisition Strategy</strong></li>
+                </ul>
+                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Build My Brand</a>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -159,9 +173,9 @@ export default function YiMeraHome() {
           <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
             <AnimatedSection>
               <div className="text-left">
-                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-6">The right brain and the left brain. In the same room.</h3>
+                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-6">Where the Left Brain Meets the Right Brain.</h3>
                 <p className="text-lg text-[#6E8C7D] mb-4">Most consultants are either creatives who don't get the numbers, or data nerds who miss the magic. We think that's a false choice.</p>
-                <p className="text-lg">YiMera was founded on a simple idea: what if you combined an <span className="font-bold text-[#D36D47]">Airbnb Lux inspector's eye for detail</span> with an <span className="font-bold text-[#D36D47]">NYU marketing professor's strategic mind?</span> You get us. Tom handles the pixels and the property. Junmian handles the plan and the profit.</p>
+                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector's eye for detail</span> with a <span className="font-bold text-[#D36D47]">seasoned business and marketing executive's strategic mind?</span> You get us - savvy business strategy with epic storytelling.</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
