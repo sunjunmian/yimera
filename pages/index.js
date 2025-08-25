@@ -58,10 +58,10 @@ export default function YiMeraHome() {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="font-serif text-3xl font-bold text-[#2C4A3F]">YiMera</h1>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</a>
-            <a href="#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</a>
-            <a href="#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</a>
-            <a href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</a>
+            <Link href="#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</Link>
+            <Link href="#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</Link>
+            <Link href="#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</Link>
+            <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</Link>
           </nav>
         </div>
       </header>
@@ -93,9 +93,9 @@ export default function YiMeraHome() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                      >
-                        <a href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                        <Link href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
                             Start the Conversation
-                        </a>
+                        </Link>
                     </motion.div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ export default function YiMeraHome() {
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
               {/* Package 1 */}
               <AnimatedSection delay={0.1}>
-                  <a href="/pricing#launch" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
+                  <Link href="/pricing#launch" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
                     <h4 className="font-serif text-3xl font-bold mb-3">Nail Your Launch</h4>
                     <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
                     <ul className="space-y-3">
@@ -130,11 +130,11 @@ export default function YiMeraHome() {
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Brand & Listing Creation</li>
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Professional Media Production</li>
                     </ul>
-                  </a>
+                  </Link>
               </AnimatedSection>
               {/* Package 2 */}
               <AnimatedSection delay={0.2}>
-                  <a href="/pricing#boost" className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47] cursor-pointer block">
+                  <Link href="/pricing#boost" className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47] cursor-pointer block">
                     <h4 className="font-serif text-3xl font-bold mb-3">Boost Your Bookings</h4>
                     <p className="text-[#DDE5DB] mb-6">For the seasoned host who&apos;s ready for more. We&apos;ll audit your operations and fine-tune your marketing to unlock true earning potential.</p>
                     <ul className="space-y-3">
@@ -142,11 +142,11 @@ export default function YiMeraHome() {
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Dynamic Pricing Strategy</li>
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Direct Booking & Social Growth</li>
                     </ul>
-                  </a>
+                  </Link>
               </AnimatedSection>
               {/* Package 3 */}
               <AnimatedSection delay={0.3}>
-                  <a href="/pricing#brand" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
+                  <Link href="/pricing#brand" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
                     <h4 className="font-serif text-3xl font-bold mb-3">Build Your Brand</h4>
                     <p className="text-[#6E8C7D] mb-6">For the visionary ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
                     <ul className="space-y-3">
@@ -154,7 +154,7 @@ export default function YiMeraHome() {
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Portfolio & Brand Expansion</li>
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Business Valuation & Exit Plan</li>
                     </ul>
-                  </a>
+                  </Link>
               </AnimatedSection>
             </div>
           </div>
@@ -166,8 +166,8 @@ export default function YiMeraHome() {
             <AnimatedSection>
               <div className="text-left">
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-6">Where the Left Brain Meets the Right Brain.</h3>
-                <p className="text-lg text-[#6E8C7D] mb-4">Most consultants are either creatives who don't get the numbers, or data nerds who miss the magic. We think that's a false choice.</p>
-                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector's eye for detail</span> with a <span className="font-bold text-[#D36D47]">seasoned business and marketing executive's strategic mind?</span> You get us - savvy business strategy with epic storytelling.</p>
+                <p className="text-lg text-[#6E8C7D] mb-4">Most consultants are either creatives who don&quot;t get the numbers, or data nerds who miss the magic. We think that&quot;s a false choice.</p>
+                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector&quot;s eye for detail</span> with a <span className="font-bold text-[#D36D47]">seasoned business and marketing executive&quot;s strategic mind?</span> You get us - savvy business strategy with epic storytelling.</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -181,7 +181,7 @@ export default function YiMeraHome() {
             <div className="container mx-auto text-center px-4">
                 <AnimatedSection>
                     <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Spaces transformed. Stories told.</h3>
-                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">A few of our favorite projects that went from 'nice' to 'booked solid'.</p>
+                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">A few of our favorite projects that went from &quot;nice&quot; to &quot;booked solid&quot;.</p>
                 </AnimatedSection>
                 <div className="grid md:grid-cols-3 gap-4">
                     <AnimatedSection delay={0.1}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">The Hudson Hideaway</h4></div></div></AnimatedSection>
@@ -207,9 +207,9 @@ export default function YiMeraHome() {
                 <AnimatedSection>
                     <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
                     <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
-                    <a href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                    <Link href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
                       hello@yimera.co
-                    </a>
+                    </Link>
                 </AnimatedSection>
             </div>
         </section>

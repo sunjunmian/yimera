@@ -14,11 +14,11 @@ export default function PricingPage() {
       {/* Header */}
       <header className="sticky top-0 bg-[#F9F6F0]/80 backdrop-blur-md z-20 p-8">
         <div className="container mx-auto flex justify-between items-center">
-          <a href="/" className="font-serif text-3xl font-bold text-[#2C4A3F] cursor-pointer">YiMera</a>
+          <Link href="/" className="font-serif text-3xl font-bold text-[#2C4A3F] cursor-pointer">YiMera</Link>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</a>
-            <a href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</a>
-            <a href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</a>
+            <Link href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</Link>
+            <Link href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</Link>
+            <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</Link>
           </nav>
         </div>
       </header>
@@ -45,7 +45,7 @@ export default function PricingPage() {
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Full Listing Creation & Copywriting</strong></li>
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Professional Photoshoot & Video</strong></li>
                 </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Get Started</a>
+                <Link href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Get Started</Link>
               </motion.div>
 
               {/* Package 2: Boost */}
@@ -60,7 +60,7 @@ export default function PricingPage() {
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Guest Experience Enhancement Plan</strong></li>
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Direct Booking & Social Media Strategy</strong></li>
                 </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Boost My Bookings</a>
+                <Link href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Boost My Bookings</Link>
               </motion.div>
 
               {/* Package 3: Brand */}
@@ -75,7 +75,7 @@ export default function PricingPage() {
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Team Building & SOP Creation</strong></li>
                   <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Valuation & Exit/Acquisition Strategy</strong></li>
                 </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Build My Brand</a>
+                <Link href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Build My Brand</Link>
               </motion.div>
             </div>
           </div>
@@ -86,9 +86,9 @@ export default function PricingPage() {
             <div className="container mx-auto text-center max-w-3xl px-4">
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
                 <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
-                <a href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                <Link href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
                   hello@yimera.co
-                </a>
+                </Link>
             </div>
         </section>
       </main>
