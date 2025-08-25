@@ -7,6 +7,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Link from 'next/link'; // Import the Link component
+import Image from 'next/image'; // Add this line
 
 
 // Helper component for SVG icons to keep the code clean
@@ -60,7 +61,7 @@ export default function YiMeraHome() {
             <a href="#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</a>
             <a href="#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</a>
             <a href="#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</a>
-            <a href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let's Chat</a>
+            <a href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</a>
           </nav>
         </div>
       </header>
@@ -69,15 +70,15 @@ export default function YiMeraHome() {
         {/* Hero Section - Corrected Layout */}
         <section className="relative h-screen min-h-[800px] flex items-center">
           <div className="container mx-auto flex h-full">
-            <div className="relative z-10 w-full md:w-10/12 flex flex-col justify-center pt-24">
+            <div className="relative z-5 w-full md:w-10/12 flex flex-col justify-center pt-24">
                 <div className="md:pr-12 bg-[#F9F6F0]/60 p-8 rounded-xl">
                     <motion.h2 
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6"
+                        className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6"
                     >
-                        Your property has a story.<br/>We have a plan.
+                        Turn your Short Term Rental into a Long Term Asset.
                     </motion.h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 40 }}
@@ -106,64 +107,55 @@ export default function YiMeraHome() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
              >
-                <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80" alt="Beautifully designed modern living room" className="w-full h-full object-cover"/>
+                <Image src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80" alt="Beautifully designed modern living room" className="w-full h-full object-cover" width={800} height={800}/>
             </motion.div>
           </div>
         </section>
 
-  {/* Pricing Section */}
-        <section id="pricing" className="py-20 md:py-32">
+        {/* Service Packages Section */}
+        <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
           <div className="container mx-auto text-center px-4">
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold mb-4">Clear pricing for ambitious hosts.</h2>
-              <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto mb-16">Our packages are designed as strategic investments in your property's success. No hidden fees, no jargon—just results.</p>
-            </motion.div>
-            
-            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto text-left">
-              {/* Package 1: Launch */}
-              <motion.div id="launch" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
-                <h3 className="font-serif text-3xl font-bold mb-2">The Launchpad</h3>
-                <p className="text-[#6E8C7D] mb-6">For new properties or first-time hosts.</p>
-                <p className="font-serif text-4xl font-bold mb-2">Starting at $2,500</p>
-                <p className="text-[#6E8C7D] mb-8">One-time project fee</p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Market Analysis & Revenue Projections</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Compliance & Permitting Guidance</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Full Listing Creation & Copywriting</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Professional Photoshoot & Video</strong></li>
-                </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Get Started</a>
-              </motion.div>
-
-              {/* Package 2: Boost */}
-              <motion.div id="boost" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl ring-4 ring-[#D36D47] flex flex-col">
-                <h3 className="font-serif text-3xl font-bold mb-2">The Performance Audit</h3>
-                <p className="text-[#DDE5DB] mb-6">For existing listings ready to level up.</p>
-                <p className="font-serif text-4xl font-bold mb-2">Starting at $1,800</p>
-                <p className="text-[#DDE5DB] mb-8">One-time project fee</p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>100-Point Audit of Listing & Operations</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Dynamic Pricing & SEO Overhaul</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Guest Experience Enhancement Plan</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Direct Booking & Social Media Strategy</strong></li>
-                </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Boost My Bookings</a>
-              </motion.div>
-
-              {/* Package 3: Brand */}
-              <motion.div id="brand" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
-                <h3 className="font-serif text-3xl font-bold mb-2">The Portfolio Strategy</h3>
-                <p className="text-[#6E8C7D] mb-6">For hosts scaling to a multi-property brand.</p>
-                <p className="font-serif text-4xl font-bold mb-2">Custom Retainer</p>
-                <p className="text-[#6E8C7D] mb-8">Bespoke monthly advising</p>
-                <ul className="space-y-4 flex-grow">
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Multi-Property System Development</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Hospitality Brand Building</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Team Building & SOP Creation</strong></li>
-                  <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> <strong>Valuation & Exit/Acquisition Strategy</strong></li>
-                </ul>
-                <a href="#contact" className="mt-8 w-full text-center bg-[#D36D47] text-white font-bold py-4 px-6 rounded-full hover:opacity-90 transition shadow-lg">Build My Brand</a>
-              </motion.div>
+            <AnimatedSection>
+                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">It&apos;s a journey. We&apos;re your guide.</h3>
+                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">Whether you&apos;re starting from scratch or know there&apos;s another gear, we have a playbook for your next move.</p>
+            </AnimatedSection>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
+              {/* Package 1 */}
+              <AnimatedSection delay={0.1}>
+                  <a href="/pricing#launch" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
+                    <h4 className="font-serif text-3xl font-bold mb-3">Nail Your Launch</h4>
+                    <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Market & Yield Analysis</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Brand & Listing Creation</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Professional Media Production</li>
+                    </ul>
+                  </a>
+              </AnimatedSection>
+              {/* Package 2 */}
+              <AnimatedSection delay={0.2}>
+                  <a href="/pricing#boost" className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47] cursor-pointer block">
+                    <h4 className="font-serif text-3xl font-bold mb-3">Boost Your Bookings</h4>
+                    <p className="text-[#DDE5DB] mb-6">For the seasoned host who&apos;s ready for more. We&apos;ll audit your operations and fine-tune your marketing to unlock true earning potential.</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> 100-Point Listing Audit</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Dynamic Pricing Strategy</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Direct Booking & Social Growth</li>
+                    </ul>
+                  </a>
+              </AnimatedSection>
+              {/* Package 3 */}
+              <AnimatedSection delay={0.3}>
+                  <a href="/pricing#brand" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
+                    <h4 className="font-serif text-3xl font-bold mb-3">Build Your Brand</h4>
+                    <p className="text-[#6E8C7D] mb-6">For the visionary ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Multi-Unit Operational Systems</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Portfolio & Brand Expansion</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Business Valuation & Exit Plan</li>
+                    </ul>
+                  </a>
+              </AnimatedSection>
             </div>
           </div>
         </section>
@@ -179,7 +171,7 @@ export default function YiMeraHome() {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Two founders collaborating" className="rounded-lg shadow-xl w-full h-full object-cover"/>
+              <Image src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Two founders collaborating" className="rounded-lg shadow-xl w-full h-full object-cover" width={500} height={500}/>
             </AnimatedSection>
           </div>
         </section>
@@ -192,9 +184,9 @@ export default function YiMeraHome() {
                     <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">A few of our favorite projects that went from 'nice' to 'booked solid'.</p>
                 </AnimatedSection>
                 <div className="grid md:grid-cols-3 gap-4">
-                    <AnimatedSection delay={0.1}><div className="group relative overflow-hidden rounded-lg"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">The Hudson Hideaway</h4></div></div></AnimatedSection>
-                    <AnimatedSection delay={0.2}><div className="group relative overflow-hidden rounded-lg"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Poconos Modern Cabin</h4></div></div></AnimatedSection>
-                    <AnimatedSection delay={0.3}><div className="group relative overflow-hidden rounded-lg"><img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Project 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Brooklyn Brownstone</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.1}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">The Hudson Hideaway</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.2}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Poconos Modern Cabin</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.3}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Project 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Brooklyn Brownstone</h4></div></div></AnimatedSection>
                 </div>
             </div>
         </section>
@@ -203,7 +195,7 @@ export default function YiMeraHome() {
         <section className="py-20 md:py-32 bg-[#DDE5DB]">
             <div className="container mx-auto text-center max-w-3xl px-4">
                 <AnimatedSection>
-                    <h3 className="font-serif text-4xl md:text-5xl font-bold mb-8">"Working with YiMera was the single best investment we've made for our rental."</h3>
+                    <h3 className="font-serif text-4xl md:text-5xl font-bold mb-8">&quot;Working with YiMera was the single best investment we&apos;ve made for our rental.&quot;</h3>
                     <p className="text-lg font-semibold">- Sarah L., Host in Montauk, NY</p>
                 </AnimatedSection>
             </div>
@@ -214,7 +206,7 @@ export default function YiMeraHome() {
             <div className="container mx-auto text-center max-w-3xl px-4">
                 <AnimatedSection>
                     <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
-                    <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We'd love to hear about your property. Drop us a line, and let's see if we're a good fit. No pressure, just a conversation.</p>
+                    <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
                     <a href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
                       hello@yimera.co
                     </a>
