@@ -113,11 +113,9 @@ export default function YiMeraHome() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                     >
-                        <Link href="#contact" legacyBehavior>
-                            <a className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                                Start the Conversation
-                            </a>
-                        </Link>
+                          <Link href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                              Start the Conversation
+                          </Link>
                     </motion.div>
                 </div>
             </div>
