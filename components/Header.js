@@ -13,10 +13,10 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</a>
-            <a href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</a>
-            <a href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</a>
-            <a href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</a>
+            <Link href="/#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</Link>
+            <Link href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</Link>
+            <Link href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</Link>
+            <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</Link>
           </nav>
 
           {/* Hamburger Button */}
@@ -39,10 +39,10 @@ export default function Header() {
         className={`fixed inset-0 bg-[#F9F6F0] z-20 transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
-          <a href="/#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>Services</a>
-          <a href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>About</a>
-          <a href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>Work</a>
-          <a href="#contact" className="bg-[#D36D47] text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition shadow-lg" onClick={() => setIsMenuOpen(false)}>Let&apos;s Chat</a>
+          <Link href="/#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          <Link href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>About</Link>
+          <Link href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition" onClick={() => setIsMenuOpen(false)}>Work</Link>
+          <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition shadow-lg" onClick={() => setIsMenuOpen(false)}>Let&apos;s Chat</Link>
         </nav>
       </div>
     </>
