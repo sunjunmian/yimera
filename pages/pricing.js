@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Header from '../components/Header'; // Import the new Header component
 
 // Re-using the CheckIcon component
 const CheckIcon = ({ className }) => (
@@ -11,17 +12,7 @@ const CheckIcon = ({ className }) => (
 export default function PricingPage() {
   return (
     <div className="bg-[#F9F6F0] text-[#2C4A3F]">
-      {/* Header */}
-      <header className="sticky top-0 bg-[#F9F6F0]/80 backdrop-blur-md z-20 p-8">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="font-serif text-3xl font-bold text-[#2C4A3F] cursor-pointer">YiMera</Link>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</Link>
-            <Link href="/#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</Link>
-            <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* Pricing Section */}
@@ -86,8 +77,8 @@ export default function PricingPage() {
             <div className="container mx-auto text-center max-w-3xl px-4">
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
                 <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
-                <Link href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                  hello@yimera.co
+                <Link href="mailto:hello@yimera.com" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                  hello@yimera.com
                 </Link>
             </div>
         </section>

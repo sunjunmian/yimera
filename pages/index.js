@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Link from 'next/link'; // Import the Link component
 import Image from 'next/image'; // Add this line
+import Header from '../components/Header'; // Import the new Header component
 
 
 // Helper component for SVG icons to keep the code clean
@@ -53,18 +54,7 @@ export default function YiMeraHome() {
   return (
     // Main container with the off-white background color
     <div className="bg-[#F9F6F0] text-[#2C4A3F]">
-      {/* Header */}
-      <header className="absolute top-0 left-0 w-full z-10 p-8">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="font-serif text-3xl font-bold text-[#2C4A3F]">YiMera</h1>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Services</Link>
-            <Link href="#about" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">About</Link>
-            <Link href="#portfolio" className="text-[#2C4A3F] font-semibold hover:text-[#D36D47] transition">Work</Link>
-            <Link href="#contact" className="bg-[#D36D47] text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition shadow-lg">Let&apos;s Chat</Link>
-          </nav>
-        </div>
-      </header>
+    <Header />
 
       <main>
         {/* Hero Section - Corrected Layout */}
@@ -78,7 +68,7 @@ export default function YiMeraHome() {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6"
                     >
-                        Turn your Short Term Rental into a Long Term Asset.
+                        Turn Short Term Rentals into Long Term Assets.
                     </motion.h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 40 }}
@@ -86,7 +76,7 @@ export default function YiMeraHome() {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                         className="text-xl md:text-2xl max-w-xl text-[#6E8C7D] mb-8"
                     >
-                        A creative consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
+                        A platform agnostic consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
                     </motion.p>
                      <motion.div
                         initial={{ opacity: 0, y: 40 }}
@@ -166,8 +156,8 @@ export default function YiMeraHome() {
             <AnimatedSection>
               <div className="text-left">
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-6">Where the Left Brain Meets the Right Brain.</h3>
-                <p className="text-lg text-[#6E8C7D] mb-4">Most consultants are either creatives who don&quot;t get the numbers, or data nerds who miss the magic. We think that&quot;s a false choice.</p>
-                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector&quot;s eye for detail</span> with a <span className="font-bold text-[#D36D47]">seasoned business and marketing executive&quot;s strategic mind?</span> You get us - savvy business strategy with epic storytelling.</p>
+                <p className="text-lg text-[#6E8C7D] mb-4">Fuse data with creative magic, local market insights and business acumen.</p>
+                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector&apos;s keen eyes</span> with a <span className="font-bold text-[#D36D47]">seasoned business executive and marketing professor&apos;s strategic mind?</span> You get us - savvy strategy with epic storytelling.</p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -207,8 +197,8 @@ export default function YiMeraHome() {
                 <AnimatedSection>
                     <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
                     <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
-                    <Link href="mailto:hello@yimera.co" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                      hello@yimera.co
+                    <Link href="mailto:hello@yimera.com" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                      hello@yimera.com
                     </Link>
                 </AnimatedSection>
             </div>
