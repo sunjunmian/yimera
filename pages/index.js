@@ -60,7 +60,7 @@ export default function YiMeraHome() {
         {/* Hero Section - Corrected Layout */}
         <section className="relative h-screen min-h-[800px] flex items-center">
           <div className="container mx-auto flex h-full">
-            <div className="relative z-5 w-full md:w-10/12 flex flex-col justify-center pt-24">
+            <div className="relative z-5 w-full md:w-9/12 flex flex-col justify-center pt-24">
                 <div className="md:pr-12 bg-[#F9F6F0]/60 p-8 rounded-xl">
                     <motion.h2 
                         initial={{ opacity: 0, y: 40 }}
