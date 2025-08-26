@@ -19,7 +19,7 @@ const CheckIcon = ({ className }) => (
 );
 
 // Animation Wrapper Component to reduce boilerplate
-const AnimatedSection = ({ children, delay = 0 }) => {
+const AnimatedSection = ({ children, delay = 0, direction = 'up' }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -33,8 +33,17 @@ const AnimatedSection = ({ children, delay = 0 }) => {
   }, [controls, inView]);
 
   const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay, ease: "easeOut" } },
+    hidden: { 
+      opacity: 0, 
+      y: direction === 'up' ? 50 : 0,
+      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      x: 0,
+      transition: { duration: 0.8, delay, ease: "easeOut" } 
+    },
   };
 
   return (
@@ -57,16 +66,37 @@ export default function YiMeraHome() {
     <Header />
 
       <main>
-        {/* Hero Section - Corrected Layout */}
-        <section className="relative h-screen min-h-[800px] flex items-center">
-          <div className="container mx-auto flex h-full">
-            <div className="relative z-5 w-full md:w-9/12 flex flex-col justify-center pt-24">
-                <div className="md:pr-12 bg-[#F9F6F0]/60 p-8 rounded-xl">
+        {/* Hero Section - Final Responsive Layout with Overlap */}
+        <section className="relative h-[80vh] min-h-[700px] bg-[#F9F6F0] overflow-hidden">
+          {/* Image Container for Desktop and Mobile */}
+          <div className="absolute inset-0 md:left-auto md:right-0 md:w-1/2">
+            <motion.div 
+              className="w-full h-full"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            >
+              <Image 
+                src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80" 
+                alt="Beautifully designed modern living room" 
+                className="w-full h-full object-cover" 
+                layout="fill"
+                priority
+              />
+              {/* Dark overlay for mobile text legibility */}
+              <div className="absolute inset-0 bg-black/40 md:hidden"></div>
+            </motion.div>
+          </div>
+
+          {/* Content Container */}
+          <div className="relative z-10 container mx-auto flex h-full items-center">
+            <div className="w-full md:w-11/12 lg:w-9/12">
+                <div className="md:bg-[#F9F6F0]/65 md:backdrop-blur-sm md:p-12 md:rounded-xl text-center md:text-left">
                     <motion.h2 
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6"
+                        className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6 text-white md:text-[#2C4A3F]"
                     >
                         Turn Short Term Rentals into Long Term Assets.
                     </motion.h2>
@@ -74,32 +104,49 @@ export default function YiMeraHome() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="text-xl md:text-2xl max-w-xl text-[#6E8C7D] mb-8"
+                        className="text-xl md:text-2xl max-w-xl mx-auto md:mx-0 text-white/90 md:text-[#6E8C7D] mb-8"
                     >
                         A platform agnostic consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
                     </motion.p>
-                     <motion.div
+                    <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                     >
-                        <Link href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                            Start the Conversation
+                    >
+                        <Link href="#contact" legacyBehavior>
+                            <a className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                                Start the Conversation
+                            </a>
                         </Link>
                     </motion.div>
                 </div>
             </div>
           </div>
-          <div className="hidden md:block absolute top-0 right-0 w-5/12 h-full">
-             <motion.div 
-                className="w-full h-full"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-             >
-                <Image src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80" alt="Beautifully designed modern living room" className="w-full h-full object-cover" width={800} height={800}/>
-            </motion.div>
-          </div>
+          {/* Scroll Down Arrow */}
+          <motion.div
+            className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+          >
+            <svg
+              className="w-12 h-12 text-white md:text-[#2C4A3F]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </motion.div>
         </section>
 
         {/* Service Packages Section */}
@@ -111,9 +158,9 @@ export default function YiMeraHome() {
             </AnimatedSection>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
               {/* Package 1 */}
-              <AnimatedSection delay={0.1}>
+              <AnimatedSection delay={0.1} direction='left'>
                   <Link href="/pricing#launch" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
-                    <h4 className="font-serif text-3xl font-bold mb-3">Nail Your Launch</h4>
+                    <h4 className="font-serif text-2xl font-bold mb-3">Nail Your Launch</h4>
                     <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
                     <ul className="space-y-3">
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Market & Yield Analysis</li>
@@ -123,9 +170,9 @@ export default function YiMeraHome() {
                   </Link>
               </AnimatedSection>
               {/* Package 2 */}
-              <AnimatedSection delay={0.2}>
+              <AnimatedSection delay={0.2} direction='up'>
                   <Link href="/pricing#boost" className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47] cursor-pointer block">
-                    <h4 className="font-serif text-3xl font-bold mb-3">Boost Your Bookings</h4>
+                    <h4 className="font-serif text-2xl font-bold mb-3">Boost Your Bookings</h4>
                     <p className="text-[#DDE5DB] mb-6">For the seasoned host who&apos;s ready for more. We&apos;ll audit your operations and fine-tune your marketing to unlock true earning potential.</p>
                     <ul className="space-y-3">
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> 100-Point Listing Audit</li>
@@ -135,9 +182,9 @@ export default function YiMeraHome() {
                   </Link>
               </AnimatedSection>
               {/* Package 3 */}
-              <AnimatedSection delay={0.3}>
+              <AnimatedSection delay={0.3} direction='right'>
                   <Link href="/pricing#brand" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
-                    <h4 className="font-serif text-3xl font-bold mb-3">Build Your Brand</h4>
+                    <h4 className="font-serif text-2xl font-bold mb-3">Build Your Brand</h4>
                     <p className="text-[#6E8C7D] mb-6">For the visionary ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
                     <ul className="space-y-3">
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Multi-Unit Operational Systems</li>
@@ -153,14 +200,14 @@ export default function YiMeraHome() {
         {/* About Us Section */}
         <section id="about" className="py-20 md:py-32">
           <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
-            <AnimatedSection>
+            <AnimatedSection direction='left'>
               <div className="text-left">
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-6">Where the Left Brain Meets the Right Brain.</h3>
                 <p className="text-lg text-[#6E8C7D] mb-4">Fuse data with creative magic, local market insights and business acumen.</p>
-                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Lux inspector&apos;s keen eyes</span> with a <span className="font-bold text-[#D36D47]">seasoned business executive and marketing professor&apos;s strategic mind?</span> You get us - savvy strategy with epic storytelling.</p>
+                <p className="text-lg">YiMera was founded on a simple idea: what if you combined a <span className="font-bold text-[#D36D47]">top real estate photographer and Airbnb Luxe Home Consultant&apos;s keen eyes</span> with a <span className="font-bold text-[#D36D47]">seasoned business executive and marketing professor&apos;s strategic mind?</span> You get us - savvy strategy with epic storytelling.</p>
               </div>
             </AnimatedSection>
-            <AnimatedSection delay={0.2}>
+            <AnimatedSection delay={0.2} direction="right">
               <Image src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Two founders collaborating" className="rounded-lg shadow-xl w-full h-full object-cover" width={500} height={500}/>
             </AnimatedSection>
           </div>
@@ -174,9 +221,9 @@ export default function YiMeraHome() {
                     <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">A few of our favorite projects that went from &quot;nice&quot; to &quot;booked solid&quot;.</p>
                 </AnimatedSection>
                 <div className="grid md:grid-cols-3 gap-4">
-                    <AnimatedSection delay={0.1}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">The Hudson Hideaway</h4></div></div></AnimatedSection>
-                    <AnimatedSection delay={0.2}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Poconos Modern Cabin</h4></div></div></AnimatedSection>
-                    <AnimatedSection delay={0.3}><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Project 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Brooklyn Brownstone</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.1} direction='left'><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">The Hudson Hideaway</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.2} direction='up'><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Poconos Modern Cabin</h4></div></div></AnimatedSection>
+                    <AnimatedSection delay={0.3} direction='right'><div className="group relative overflow-hidden rounded-lg aspect-w-1 aspect-h-1"><Image src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Project 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" width={800} height={800}/><div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6"><h4 className="text-white font-bold text-xl">Brooklyn Brownstone</h4></div></div></AnimatedSection>
                 </div>
             </div>
         </section>
