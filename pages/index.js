@@ -62,7 +62,7 @@ const AnimatedSection = ({ children, delay = 0, direction = 'up' }) => {
 export default function YiMeraHome() {
   return (
     // Main container with the off-white background color
-    <div className="bg-[#F9F6F0] text-[#2C4A3F]">
+    <div className="bg-[#F9F6F0] text-[#2C4A3F] overflow-x-hidden">
     <Header />
 
       <main>
