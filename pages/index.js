@@ -66,10 +66,10 @@ export default function YiMeraHome() {
     <Header />
 
       <main>
-        {/* Hero Section - Final Responsive Layout with Overlap */}
-        <section className="relative h-[80vh] min-h-[700px] bg-[#F9F6F0] overflow-hidden">
-          {/* Image Container for Desktop and Mobile */}
-          <div className="absolute inset-0 md:left-auto md:right-0 md:w-1/2">
+        {/* Hero Section - Final Responsive Layout */}
+        <section className="relative bg-[#F9F6F0] md:min-h-[600px] md:h-[85vh] pb-16 md:pb-0">
+          {/* The key is a single container for the image that behaves differently on mobile vs desktop */}
+          <div className="relative h-[45vh] md:absolute md:top-0 md:right-0 md:h-full md:w-7/12">
             <motion.div 
               className="w-full h-full"
               initial={{ opacity: 0, x: 100 }}
@@ -77,73 +77,73 @@ export default function YiMeraHome() {
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
               <Image 
-                src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto-format&fit=crop&w=1000&q=80" 
                 alt="Beautifully designed modern living room" 
                 className="w-full h-full object-cover" 
                 layout="fill"
                 priority
               />
-              {/* Dark overlay for mobile text legibility */}
-              <div className="absolute inset-0 bg-black/40 md:hidden"></div>
             </motion.div>
           </div>
 
-          {/* Content Container */}
-          <div className="relative z-10 container mx-auto flex h-full items-center">
-            <div className="w-full md:w-11/12 lg:w-9/12">
-                <div className="md:bg-[#F9F6F0]/65 md:backdrop-blur-sm md:p-12 md:rounded-xl text-center md:text-left">
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6 text-white md:text-[#2C4A3F]"
-                    >
-                        Turn Short Term Rentals into Long Term Assets.
-                    </motion.h2>
-                    <motion.p 
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="text-xl md:text-2xl max-w-xl mx-auto md:mx-0 text-white/90 md:text-[#6E8C7D] mb-8"
-                    >
-                        A platform agnostic consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
-                    </motion.p>
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                    >
-                          <Link href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+          {/* Content Container that handles positioning */}
+          <div className="relative z-10 container mx-auto px-4 md:h-full md:flex md:items-center">
+            {/* The text card itself */}
+            <div className="bg-[#F9F6F0] rounded-xl shadow-lg p-8 -mt-24 
+                            md:mt-0 md:w-9/12 lg:w-9/12 md:bg-[#F9F6F0]/80 md:backdrop-blur-sm md:p-12">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6 text-[#2C4A3F]"
+                >
+                    Turn Short Term Rentals into Long Term Assets.
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    className="text-lg md:text-2xl max-w-xl text-[#6E8C7D] mb-8"
+                >
+                    A platform agnostic consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
+                </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                >
+                      <Link href="#contact" legacyBehavior>
+                          <a className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
                               Start the Conversation
-                          </Link>
-                    </motion.div>
-                </div>
+                          </a>
+                      </Link>
+                </motion.div>
             </div>
           </div>
           {/* Scroll Down Arrow */}
           <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "loop",
+          }}
           >
-            <svg
-              className="w-12 h-12 text-white md:text-[#2C4A3F]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+          <svg
+          className="w-12 h-12"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 9l-7 7-7-7"
+          />
+          </svg>
           </motion.div>
         </section>
 
