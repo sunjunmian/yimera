@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import Link from 'next/link'; // Import the Link component
 import Image from 'next/image'; // Add this line
 import Header from '../components/Header'; // Import the new Header component
+import Footer from '../components/Footer'; 
 
 
 // Helper component for SVG icons to keep the code clean
@@ -95,7 +96,7 @@ export default function YiMeraHome() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="font-serif lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl font-bold leading-tight mb-6 text-[#2C4A3F]"
+                    className="font-serif lg:text-6xl md:text-5xl sm:text-4xl font-bold leading-tight mb-6 text-[#2C4A3F]"
                 >
                     Turn Short Term Rentals into Long Term Assets.
                 </motion.h2>
@@ -233,29 +234,10 @@ export default function YiMeraHome() {
                 </AnimatedSection>
             </div>
         </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="py-20 md:py-32">
-            <div className="container mx-auto text-center max-w-3xl px-4">
-                <AnimatedSection>
-                    <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Ready to get serious?</h3>
-                    <p className="text-lg md:text-xl text-[#6E8C7D] mb-8">We&apos;d love to hear about your property. Drop us a line, and let&apos;s see if we&apos;re a good fit. No pressure, just a conversation.</p>
-                    <Link href="mailto:hello@yimera.com" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                      hello@yimera.com
-                    </Link>
-                </AnimatedSection>
-            </div>
-        </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#2C4A3F] text-white py-12">
-        <div className="container mx-auto text-center">
-          <h3 className="font-serif text-3xl font-bold mb-4">YiMera</h3>
-          <p className="text-[#DDE5DB]">A consultancy for hosts who mean business.</p>
-          <p className="text-[#88A096] text-sm mt-8">© 2025 YiMera. All Rights Reserved. | Serving NY, NJ, PA, & CT</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
