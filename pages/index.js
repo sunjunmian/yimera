@@ -67,7 +67,7 @@ export default function YiMeraHome() {
 
       <main>
         {/* Hero Section - Final Responsive Layout */}
-        <section className="relative bg-[#F9F6F0] md:min-h-[600px] md:h-[85vh] pb-16 md:pb-0">
+        <section className="relative bg-[#F9F6F0] min-h-[90svh] pb-16 md:pb-0 md:flex md:items-center">
           {/* The key is a single container for the image that behaves differently on mobile vs desktop */}
           <div className="relative h-[45vh] md:absolute md:top-0 md:right-0 md:h-full md:w-7/12">
             <motion.div 
@@ -87,15 +87,15 @@ export default function YiMeraHome() {
           </div>
 
           {/* Content Container that handles positioning */}
-          <div className="relative z-10 container mx-auto px-4 md:h-full md:flex md:items-center">
+          <div className="relative z-10 container mx-auto px-4">
             {/* The text card itself */}
-            <div className="bg-[#F9F6F0] rounded-xl shadow-lg p-8 -mt-24 
+            <div className="bg-[#F9F6F0] rounded-xl p-8 -mt-24 
                             md:mt-0 md:w-9/12 lg:w-9/12 md:bg-[#F9F6F0]/80 md:backdrop-blur-sm md:p-12">
                 <motion.h2 
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6 text-[#2C4A3F]"
+                    className="font-serif lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl font-bold leading-tight mb-6 text-[#2C4A3F]"
                 >
                     Turn Short Term Rentals into Long Term Assets.
                 </motion.h2>
@@ -103,19 +103,17 @@ export default function YiMeraHome() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="text-lg md:text-2xl max-w-xl text-[#6E8C7D] mb-8"
+                    className="text-lg md:text-2xl text-[#6E8C7D] mb-8"
                 >
-                    A platform agnostic consultancy for short-term rental owners who think like investors. We turn good listings into great businesses.
+                    YiMera is a platform agnostic consultancy to help short-term rental property owners get more bookings, better reviews, build profitable and scalable hospitality brands.
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                 >
-                      <Link href="#contact" legacyBehavior>
-                          <a className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
-                              Start the Conversation
-                          </a>
+                      <Link href="#contact" className="inline-block bg-[#D36D47] text-white font-bold py-4 px-10 rounded-full hover:opacity-90 transition shadow-lg text-lg">
+                        See How We Can Help
                       </Link>
                 </motion.div>
             </div>
@@ -151,8 +149,8 @@ export default function YiMeraHome() {
         <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
           <div className="container mx-auto text-center px-4">
             <AnimatedSection>
-                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">It&apos;s a journey. We&apos;re your guide.</h3>
-                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">Whether you&apos;re starting from scratch or know there&apos;s another gear, we have a playbook for your next move.</p>
+                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Explore Our Services</h3>
+                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">From the first booking, finding the next gear to owning a full-scale lifestyle brand, we help your short-term rental grow.</p>
             </AnimatedSection>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
               {/* Package 1 */}
@@ -161,9 +159,9 @@ export default function YiMeraHome() {
                     <h4 className="font-serif text-2xl font-bold mb-3">Nail Your Launch</h4>
                     <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
                     <ul className="space-y-3">
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Market & Yield Analysis</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Brand & Listing Creation</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Professional Media Production</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Photography & Media</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Listing Creation</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Launch Playbook</li>
                     </ul>
                   </Link>
               </AnimatedSection>
@@ -175,7 +173,7 @@ export default function YiMeraHome() {
                     <ul className="space-y-3">
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> 100-Point Listing Audit</li>
                       <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Dynamic Pricing Strategy</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Direct Booking & Social Growth</li>
+                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Guest Experience Optimization</li>
                     </ul>
                   </Link>
               </AnimatedSection>
