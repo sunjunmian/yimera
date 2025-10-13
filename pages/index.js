@@ -146,49 +146,43 @@ export default function YiMeraHome() {
           </motion.div>
         </section>
 
-        {/* Service Packages Section */}
+          {/* Services Section */}
         <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
           <div className="container mx-auto text-center px-4">
             <AnimatedSection>
-                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Explore Our Services</h3>
-                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-2xl mx-auto mb-16">From the first booking, finding the next gear to owning a full-scale lifestyle brand, we help your short-term rental grow.</p>
+                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Choose Your Path.</h3>
+                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto mb-16">Every host is on a unique journey. We’ve designed our services to meet you exactly where you are and guide you to where you want to go.</p>
             </AnimatedSection>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
-              {/* Package 1 */}
-              <AnimatedSection delay={0.1} direction='left'>
-                  <Link href="/pricing#launch" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
-                    <h4 className="font-serif text-2xl font-bold mb-3">Nail Your Launch</h4>
-                    <p className="text-[#6E8C7D] mb-6">For the ambitious host starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Photography & Media</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Listing Creation</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Launch Playbook</li>
-                    </ul>
+              {/* Path 1: Launch */}
+              <AnimatedSection delay={0.1}>
+                <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
+                  <h4 className="font-serif text-3xl font-bold mb-3">The Launch Path</h4>
+                  <p className="text-[#6E8C7D] mb-6 flex-grow">For ambitious hosts starting from scratch. Sidestep the rookie mistakes and launch a listing that’s profitable from day one.</p>
+                  <Link href="/pricing/launch" legacyBehavior>
+                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Launch Options &rarr;</a>
                   </Link>
+                </div>
               </AnimatedSection>
-              {/* Package 2 */}
-              <AnimatedSection delay={0.2} direction='up'>
-                  <Link href="/pricing#boost" className="bg-[#2C4A3F] text-white p-8 rounded-lg shadow-xl h-full hover:-translate-y-2 transition-all duration-300 ring-4 ring-[#D36D47] cursor-pointer block">
-                    <h4 className="font-serif text-2xl font-bold mb-3">Boost Your Bookings</h4>
-                    <p className="text-[#DDE5DB] mb-6">For the seasoned host who&apos;s ready for more. We&apos;ll audit your operations and fine-tune your marketing to unlock true earning potential.</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> 100-Point Listing Audit</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Dynamic Pricing Strategy</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Guest Experience Optimization</li>
-                    </ul>
+              {/* Path 2: Revive */}
+              <AnimatedSection delay={0.2}>
+                <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
+                  <h4 className="font-serif text-3xl font-bold mb-3">The Revive Path</h4>
+                  <p className="text-[#6E8C7D] mb-6 flex-grow">For seasoned hosts who feel stuck. We’ll audit your listing and fine-tune your strategy to unlock its true earning potential.</p>
+                  <Link href="/pricing/revive" legacyBehavior>
+                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Revive Options &rarr;</a>
                   </Link>
+                </div>
               </AnimatedSection>
-              {/* Package 3 */}
-              <AnimatedSection delay={0.3} direction='right'>
-                  <Link href="/pricing#brand" className="bg-white p-8 rounded-lg shadow-sm h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer block">
-                    <h4 className="font-serif text-2xl font-bold mb-3">Build Your Brand</h4>
-                    <p className="text-[#6E8C7D] mb-6">For the visionary ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Multi-Unit Operational Systems</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Portfolio & Brand Expansion</li>
-                      <li className="flex items-start"><CheckIcon className="w-6 h-6 text-[#88A096] mr-3 flex-shrink-0" /> Business Valuation & Exit Plan</li>
-                    </ul>
+              {/* Path 3: Elevate */}
+              <AnimatedSection delay={0.3}>
+                <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
+                  <h4 className="font-serif text-3xl font-bold mb-3">The Elevate Path</h4>
+                  <p className="text-[#6E8C7D] mb-6 flex-grow">For visionaries ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
+                  <Link href="/pricing/elevate" legacyBehavior>
+                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Elevate Options &rarr;</a>
                   </Link>
+                </div>
               </AnimatedSection>
             </div>
           </div>
