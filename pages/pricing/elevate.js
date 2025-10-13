@@ -14,7 +14,7 @@ export default function ElevatePricingPage() {
             <div className="container mx-auto px-4">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
                     <h2 className="font-serif text-4xl md:text-6xl font-bold mb-4">The Elevate Path</h2>
-                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto">You've mastered the single property. Now it's time to scale. We provide the strategic framework and operational systems to grow from a successful listing into a lasting, multi-property hospitality brand with a life of its own.</p>
+                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto">You&apos;ve mastered the single property. Now it&apos;s time to scale. We provide the strategic framework and operational systems to grow from a successful listing into a lasting, multi-property hospitality brand with a life of its own.</p>
                 </motion.div>
             </div>
         </section>

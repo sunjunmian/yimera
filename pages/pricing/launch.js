@@ -14,7 +14,7 @@ export default function LaunchPricingPage() {
             <div className="container mx-auto px-4">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
                     <h2 className="font-serif text-4xl md:text-6xl font-bold mb-4">The Launch Path</h2>
-                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto">You have a property and a vision. We have the playbook to turn it into a profitable, guest-ready business from day one. Whether you're launching a new Airbnb in the Hudson Valley or a shore house in NJ, our expertise ensures you sidestep the common pitfalls and start strong.</p>
+                    <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto">You have a property and a vision. We have the playbook to turn it into a profitable, guest-ready business from day one. Whether you&apos;re launching a new Airbnb in the Hudson Valley or a shore house in NJ, our expertise ensures you sidestep the common pitfalls and start strong.</p>
                 </motion.div>
             </div>
         </section>

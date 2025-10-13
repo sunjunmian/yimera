@@ -41,7 +41,7 @@ export default function RevivePricingPage() {
                     <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
                         <h4 className="font-bold text-lg mb-2 text-[#D36D47]">COMPLETE</h4>
                         <p className="font-serif text-3xl font-bold mb-4">Full Revitalization</p>
-                        <p className="text-[#6E8C7D] mb-6">We don't just build the plan—we execute it with you.</p>
+                        <p className="text-[#6E8C7D] mb-6">We don&apos;t just build the plan—we execute it with you.</p>
                         <ul className="space-y-3 flex-grow mb-8"><li className="flex items-start"><CheckIcon className="w-5 h-5 text-[#88A096] mr-3 mt-1 flex-shrink-0" /><strong>Everything in Guided, plus:</strong></li><li className="flex items-start"><CheckIcon className="w-5 h-5 text-[#88A096] mr-3 mt-1 flex-shrink-0" />Implementation of key recommendations</li><li className="flex items-start"><CheckIcon className="w-5 h-5 text-[#88A096] mr-3 mt-1 flex-shrink-0" />Full media refresh (photos & video)</li><li className="flex items-start"><CheckIcon className="w-5 h-5 text-[#88A096] mr-3 mt-1 flex-shrink-0" />Updated listing copy & social assets</li></ul>
                         <p className="text-2xl font-bold mb-6">Investment: ~$6,500+</p>
                         <a href="#contact" className="w-full text-center bg-gray-200 text-[#2C4A3F] font-bold py-3 px-6 rounded-full hover:bg-gray-300 transition">Get Started</a>
