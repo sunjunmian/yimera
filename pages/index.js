@@ -159,8 +159,8 @@ export default function YiMeraHome() {
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Launch Path</h4>
                   <p className="text-[#6E8C7D] mb-6 flex-grow">For ambitious hosts starting from scratch. Sidestep the rookie mistakes and launch a listing that’s profitable from day one.</p>
-                  <Link href="/pricing/launch" legacyBehavior>
-                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Launch Options &rarr;</a>
+                  <Link href="/pricing/launch" className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">
+                    See Launch Options &rarr;
                   </Link>
                 </div>
               </AnimatedSection>
@@ -169,8 +169,8 @@ export default function YiMeraHome() {
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Revive Path</h4>
                   <p className="text-[#6E8C7D] mb-6 flex-grow">For seasoned hosts who feel stuck. We’ll audit your listing and fine-tune your strategy to unlock its true earning potential.</p>
-                  <Link href="/pricing/revive" legacyBehavior>
-                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Revive Options &rarr;</a>
+                  <Link href="/pricing/revive" className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">
+                    See Revive Options &rarr;
                   </Link>
                 </div>
               </AnimatedSection>
@@ -179,8 +179,8 @@ export default function YiMeraHome() {
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Elevate Path</h4>
                   <p className="text-[#6E8C7D] mb-6 flex-grow">For visionaries ready to scale. Grow from a single listing into a scalable hospitality brand with a life of its own.</p>
-                  <Link href="/pricing/elevate" legacyBehavior>
-                    <a className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">See Elevate Options &rarr;</a>
+                  <Link href="/pricing/elevate" className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">
+                    See Elevate Options &rarr;
                   </Link>
                 </div>
               </AnimatedSection>
