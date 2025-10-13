@@ -49,8 +49,19 @@ export default function RevivePricingPage() {
                 </div>
             </div>
         </section>
-
-        {/* ... (Add-Ons and Summary Table sections) ... */}
+        <section className="py-16 md:py-24">
+            <div className="container mx-auto px-4 text-center">
+                <h3 className="font-serif text-3xl md:text-4xl font-bold mb-12">À La Carte Add-Ons</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto text-left">
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>Drone Footage:</strong> Starting at $350</div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>3D Virtual Tour:</strong> Starting at $400</div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>Social Media Kit:</strong> Starting at $500</div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>Direct Booking Site:</strong> Starting at $2,000</div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>Floor Plans:</strong> Starting at $200</div>
+                    <div className="bg-white p-6 rounded-lg shadow-sm"><strong>Advanced SEO:</strong> Custom Quote</div>
+                </div>
+            </div>
+        </section>
       </main>
       <Footer />
     </div>

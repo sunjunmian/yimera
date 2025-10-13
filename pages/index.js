@@ -147,34 +147,31 @@ export default function YiMeraHome() {
         </section>
 
           {/* Services Section */}
-        <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
+     <section id="services" className="py-20 md:py-32 bg-[#DDE5DB]">
           <div className="container mx-auto text-center px-4">
             <AnimatedSection>
                 <h3 className="font-serif text-4xl md:text-5xl font-bold mb-4">Choose Your Path.</h3>
-                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto mb-16">Every host is on a unique journey. We’ve designed our services to meet you exactly where you are and guide you to where you want to go.</p>
+                <p className="text-lg md:text-xl text-[#6E8C7D] max-w-3xl mx-auto mb-16">Every host is on a unique journey. We&apos;ve designed our services to meet you exactly where you are and guide you to where you want to go.</p>
             </AnimatedSection>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
-              {/* Path 1: Launch */}
               <AnimatedSection delay={0.1}>
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Launch Path</h4>
-                  <p className="text-[#6E8C7D] mb-6 flex-grow">For ambitious hosts starting from scratch. Sidestep the rookie mistakes and launch a listing that’s profitable from day one.</p>
+                  <p className="text-[#6E8C7D] mb-6 flex-grow">For ambitious hosts starting from scratch. Sidestep the rookie mistakes and launch a listing that&apos;s profitable from day one.</p>
                   <Link href="/pricing/launch" className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">
                     See Launch Options &rarr;
                   </Link>
                 </div>
               </AnimatedSection>
-              {/* Path 2: Revive */}
               <AnimatedSection delay={0.2}>
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Revive Path</h4>
-                  <p className="text-[#6E8C7D] mb-6 flex-grow">For seasoned hosts who feel stuck. We’ll audit your listing and fine-tune your strategy to unlock its true earning potential.</p>
+                  <p className="text-[#6E8C7D] mb-6 flex-grow">For seasoned hosts who feel stuck. We&apos;ll audit your listing and fine-tune your strategy to unlock its true earning potential.</p>
                   <Link href="/pricing/revive" className="font-bold text-[#D36D47] hover:text-[#2C4A3F] transition self-start">
                     See Revive Options &rarr;
                   </Link>
                 </div>
               </AnimatedSection>
-              {/* Path 3: Elevate */}
               <AnimatedSection delay={0.3}>
                 <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col">
                   <h4 className="font-serif text-3xl font-bold mb-3">The Elevate Path</h4>
